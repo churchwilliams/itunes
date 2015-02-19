@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
 <html ng-app="itunes">
-
   <head>
+
+<!-- BOOTSTRAP, Bootstrap THEME, NG-GRID, STYLE.CSS -->
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
-
-<!-- BODY start -->
 
   <body ng-controller="mainCtrl">
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -18,34 +18,33 @@
           <div class="navbar-header">
             <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-music"></span> DevTunes</a>
           </div>
-
-<!-- form section -->
-
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
+
+<!-- ng-model="NAME" -->
               <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" >
+
+<!-- ng-click="getSongData()" -->              
               <button class="btn btn-primary" ng-click="getSongData()"> Submit </button>
-            </div> <!-- form-group -->
-          </form> <!-- .navbar-form .navbar-left -->
-
-
-        </div> <!-- #myContainer -->
-      </div> <!-- .container -->
-    </div> <!-- .navbar-fixed-top -->
-
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="panel panel-default">
       <div class="panel-heading"> Your Search Results:</div>
+
+<!-- ng-grid="gridOptions" -->
+<!-- swap-image="defaultInfo.search" -->
      <div class="gridStyle" ng-grid="gridOptions" swap-image="defaultInfo.search"></div>
-    </div> <!-- .panel .panel-default -->
+    </div>
 
-
-<!-- SCRIPTS -->    
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- SCRIPTS ... jQuery, Angular, ng-grid, app.js, mainCtrl, itunesService -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/itunesService.js"></script>
-
-  </body> <!-- mainCtrl -->
+  </body>
 </html>
